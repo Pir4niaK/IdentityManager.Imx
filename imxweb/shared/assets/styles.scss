@@ -1,6 +1,29 @@
 @import 'variables';
 @import '@elemental-ui/core/src/styles/_eui_palette.scss';
 
+/*********************************************************************
+ * UNIGE Modifications to override eui-light-theme and eui-dark-theme *
+ *********************************************************************/
+
+ /* UI Fixes */
+ .eui-masthead {
+   background: #d80669 !important;
+ }
+
+ /* Custom Fonts */
+ @font-face {
+   font-family: 'Almarena';
+   src: url('fonts/almarena/almarena-regular.woff2');
+ }
+
+ @font-face {
+   font-family: 'Open Sans';
+   src: url('fonts/open-sans/OpenSans-Regular.ttf');
+ }
+ 
+/*********************************************************************/
+
+
 /* Elemental UI */
 .imx-eui-icon {
   margin: 10px;
