@@ -78,7 +78,7 @@
 .eui-dark-theme {
   :host {
     .mat-toolbar.mat-primary {
-      background-color: $color-blue-80;
+      background-color: #d80669;
       color: $color-gray-5;
     }
   }
@@ -87,11 +87,11 @@
 .eui-contrast-theme {
   :host {
     ::ng-deep .eui-masthead {
-      background-color: $color-blue-80;
+      background-color: #d80669;
     }
 
     .mat-toolbar.mat-primary {
-      background-color: $color-blue-80;
+      background-color: #d80669;
       color: $color-gray-0;
     }
   }
