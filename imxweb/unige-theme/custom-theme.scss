@@ -1,0 +1,135 @@
+$theme_font_family: 'Source Sans Pro, "Helvetica Neue", sans-serif' !default;
+
+@use 'sass:math';
+@use '@angular/material' as mat;
+
+@import '@elemental-ui/core/src/styles/functions/to_number';
+
+@import '@elemental-ui/core/src/styles/reset';
+@import '@elemental-ui/core/src/styles/billboard';
+@import '@elemental-ui/core/src/styles/cadence';
+@import '@elemental-ui/core/src/styles/material_icons';
+@import '@elemental-ui/core/src/styles/source_sans_pro';
+@import '@elemental-ui/core/src/styles/palette';
+@import '@elemental-ui/core/src/styles/typography';
+@import '@elemental-ui/core/src/styles/material_fixes';
+@import '@elemental-ui/core/src/styles/inputs';
+@import '@elemental-ui/core/src/styles/clickables';
+@import '@elemental-ui/core/src/styles/common';
+
+$custom-typography: mat.define-typography-config(
+  $font-family: $theme_font_family,
+  $button: mat.define-typography-level(14px, 14px, 400),
+);
+@include mat.core($custom-typography);
+
+//Define colors palette
+$md-mcgpalette0: (
+    50 : #fae1ed,
+    100 : #f3b4d2,
+    200 : #ec83b4,
+    300 : #e45196,
+    400 : #de2b80,
+    500 : #d80669,
+    600 : #d40561,
+    700 : #ce0456,
+    800 : #c8034c,
+    900 : #bf023b,
+    A100 : #ffe7ed,
+    A200 : #ffb4c6,
+    A400 : #ff819f,
+    A700 : #ff688b,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+
+// Define the custom theme.
+$primary: mat.define-palette($md-mcgpalette0, 500);
+$accent: mat.define-palette($corbin-orange-palette);
+$warn: mat.define-palette($phoenix-red-palette);
+
+$theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary,
+      accent: $accent,
+      warn: $warn,
+    ),
+  )
+);
+
+.md-mcgpalette0-theme {
+  @include mat.all-component-themes($theme);
+
+  .mat-tree-node--selected, .imx-card:hover, .data-explorer-card-header {
+    border: 1px solid mat.get-color-from-palette($primary, 200) !important;
+  }
+
+  .snavigation-side-content {
+    border: 1px solid mat.get-color-from-palette($primary, 200) !important;
+    background-color: mat.get-color-from-palette($primary, 50) !important;
+  }
+
+  .eui-top-navigation-item-active {
+    border-bottom: 1px solid mat.get-color-from-palette($primary, 500) !important;
+  }
+
+  .colored-icon, .imx-content > span, imx-data-source-toolbar .eui-search-icon {
+    color: mat.get-color-from-palette($primary, 500) !important;
+  }
+
+  // fix for the header and splash
+  .eui-masthead, .mat-toolbar.mat-primary, .splash-screen-container {
+    background-color: #8d8d8d !important;
+  }
+
+  .ss-message {
+    border-top: 1px solid #fff !important;
+    border-bottom: 1px solid #fff !important;
+  }
+
+  // fix for the login
+  .imx-loginPage {
+    background-image: url("assets/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #8d8d8d !important;
+  }
+
+  .imx-loginMask {
+    background-color: rgba(255, 255, 255, 0.4);
+    padding-bottom: 2rem;
+  }
+
+  .imx-loginButtonpanel button, .eui-sidesheet .mat-toolbar, .snavigation-item--selected {
+    background-color: mat.get-color-from-palette($primary, 500) !important;
+  }
+
+  .data-explorer-card-header-bg {
+    background-color: mat.get-color-from-palette($primary, 200) !important;
+  }
+
+  .data-explorer .data-explorer-card-header .data-explorer-card-header-bg .eui-icon {
+    color: #fff !important;
+  }
+
+  .imx-dialog-panel-class > .mat-dialog-container {
+    background-color: mat.get-color-from-palette($asher-gray-palette, 200);
+  }
+}
