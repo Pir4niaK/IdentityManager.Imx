@@ -1,0 +1,8 @@
+{
+  "name": "unige-dark-theme",
+  "version": "9.2.1",
+  "private": true,
+  "scripts": {
+    "build": "sass custom-theme.scss:unige-dark-theme.css --load-path=..\\..\\node_modules"
+  }
+}

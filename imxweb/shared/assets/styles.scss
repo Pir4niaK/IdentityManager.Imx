@@ -1,16 +1,20 @@
 @import 'variables';
 @import '@elemental-ui/core/src/styles/_eui_palette.scss';
 
+
 /*********************************************************************
- * UNIGE Modifications to override eui-light-theme and eui-dark-theme *
+ * unige Modifications to override eui-light-theme and eui-dark-theme *
  *********************************************************************/
+  
+ @import 'unige-themes/light/unige-light-theme.css';
+ @import 'unige-themes/dark/unige-dark-theme.css';
 
  /* UI Fixes */
  .eui-masthead {
    background: #d80669 !important;
  }
+ 
 /*********************************************************************/
-
 
 /* Elemental UI */
 .imx-eui-icon {

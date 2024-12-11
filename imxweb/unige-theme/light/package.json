@@ -1,0 +1,8 @@
+{
+  "name": "unige-light-theme",
+  "version": "9.2.1",
+  "private": true,
+  "scripts": {
+    "build": "sass custom-theme.scss:unige-light-theme.css --load-path=..\\node_modules"
+  }
+}

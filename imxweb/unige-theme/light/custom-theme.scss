@@ -1,0 +1,120 @@
+$theme_font_family: 'Open Sans', 'Source Sans Pro, "Helvetica Neue", sans-serif' !default;
+$dark-primary-text: #3d3d3d;
+$light-primary-text: #ffffff;
+
+@use 'sass:math';
+@use '@angular/material' as mat;
+
+@import '@elemental-ui/core/src/styles/functions/to_number';
+
+@import '@elemental-ui/core/src/styles/reset';
+@import '@elemental-ui/core/src/styles/billboard';
+@import '@elemental-ui/core/src/styles/cadence';
+@import '@elemental-ui/core/src/styles/material_icons';
+@import '@elemental-ui/core/src/styles/source_sans_pro';
+@import '@elemental-ui/core/src/styles/palette';
+@import '@elemental-ui/core/src/styles/typography';
+@import '@elemental-ui/core/src/styles/material_fixes';
+@import '@elemental-ui/core/src/styles/inputs';
+@import '@elemental-ui/core/src/styles/clickables';
+@import '@elemental-ui/core/src/styles/common';
+
+$unige-primary-palette: (
+  50 : #fae1ed,
+  100 : #f3b4d2,
+  200 : #ec83b4,
+  300 : #e45196,
+  400 : #de2b80,
+  500 : #d80669,
+  600 : #d40561,
+  700 : #ce0456,
+  800 : #c8034c,
+  900 : #bf023b,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  ),
+);
+
+$unige-accent-palette: (
+  50: #e9e9fa,
+  100: #c7c8f1,
+  200: #a2a4e8,
+  300: #7c80df,
+  400: #6063d8,
+  500: #4545cf,
+  600: #403dc4,
+  700: #3732b8,
+  800: #2f26ac,
+  900: #20099a,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  ),
+);
+
+$unige-warn-palette: (
+  50: #fdeaee,
+  100: #fbcad2,
+  200: #ea959b,
+  300: #de6c74,
+  400: #e84853,
+  500: #ed323b,
+  600: #de2839,
+  700: #cc1d33,
+  800: #bf152c,
+  900: #b00020,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  ),
+);
+
+$custom-typography: mat.define-typography-config(
+  $font-family: $theme_font_family,
+  $button: mat.define-typography-level(14px, 14px, 400),
+);
+@include mat.core($custom-typography);
+
+// Define the custom theme.
+$primary: mat.define-palette($unige-primary-palette, 400, 200, 700);
+$accent: mat.define-palette($unige-accent-palette, 500);
+$warn: mat.define-palette($unige-warn-palette, 900);
+
+$theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary,
+      accent: $accent,
+      warn: $warn,
+    ),
+  )
+);
+
+.unige-light-theme {
+  @include mat.all-component-themes($theme);
+}
